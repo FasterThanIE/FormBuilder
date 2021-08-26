@@ -45,7 +45,7 @@ class FormBuilder implements FormBuilderInterface
         {
             throw new InvalidTypeException();
         }
-        $this->formPool->addField($name, $fieldType);
+        $this->formPool->addField($name, $fieldType, $value);
         return $this;
     }
 }
