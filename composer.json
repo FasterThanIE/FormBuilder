@@ -1,0 +1,15 @@
+{
+    "name": "tomar/forms",
+    "autoload": {
+        "psr-4": {
+            "TomTom\\Forms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "FasterThanIE",
+            "email": "tomicawarr@gmail.com"
+        }
+    ],
+    "require": {}
+}
