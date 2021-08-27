@@ -22,7 +22,5 @@ class FormPool
             'options' => array_key_exists('options', $data) ? $data['options'] : [],
             'class' => array_key_exists('class', $data) ? $data['class'] : [],
         ];
-
-        var_dump($this->fields);
     }
 }
