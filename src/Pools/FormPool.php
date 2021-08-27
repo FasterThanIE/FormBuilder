@@ -12,13 +12,17 @@ class FormPool
     /**
      * @param string $fieldName
      * @param string $fieldType
-     * @param null $defaultValue
+     * @param array $data
      */
-    public function addField(string $fieldName, string $fieldType, $defaultValue = null): void
+    public function addField(string $fieldName, string $fieldType, array $data = []): void
     {
         $this->fields[$fieldName] = [
             'type' => $fieldType,
-            'data' => $defaultValue,
+            'data' => array_key_exists('data', $data) ? $data['data'] : [],
+            'options' => array_key_exists('options', $data) ? $data['options'] : [],
+            'class' => array_key_exists('class', $data) ? $data['class'] : [],
         ];
+
+        var_dump($this->fields);
     }
 }

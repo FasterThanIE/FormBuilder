@@ -2,6 +2,7 @@
 
 namespace TomTom\Forms;
 
+use stdClass;
 use TomTom\Forms\Interfaces\FormBuilderInterface;
 use TomTom\Forms\Pools\FormPool;
 
@@ -26,20 +27,26 @@ class FormBuilder implements FormBuilderInterface
      */
     private $formPool;
 
-    public function __construct(string $formName)
+    /**
+     * @var stdClass
+     */
+    private $dataHandler;
+
+    public function __construct(string $formName, string $dataHandler)
     {
         $this->formName = $formName;
+        $this->dataHandler = new $dataHandler();
         $this->formPool = new FormPool();
     }
 
     /**
      * @param string $name
      * @param string $fieldType
-     * @param null $value
+     * @param array $value
      * @return FormBuilder
      * @throws InvalidTypeException
      */
-    public function add(string $name, string $fieldType, $value = null): FormBuilder
+    public function add(string $name, string $fieldType, array $value = []): FormBuilder
     {
         if(!in_array($fieldType, self::ALLOWED_TYPES))
         {

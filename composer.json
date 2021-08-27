@@ -2,7 +2,8 @@
     "name": "tomar/forms",
     "autoload": {
         "psr-4": {
-            "TomTom\\Forms\\": "src/"
+            "TomTom\\Forms\\": "src/",
+            "TomTom\\Test\\": "Test/"
         }
     },
     "authors": [
